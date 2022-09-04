@@ -76,7 +76,7 @@ const updateAddressHandler = async (req, res) => {
     const address = req.body;
     const { addressId } = req.params;
 
-    const updatedAddress = address.map((addressItem) =>
+    const updatedAddress = user.addresses.map((addressItem) =>
       addressItem._id === addressId ? address : addressItem
     );
 
