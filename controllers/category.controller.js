@@ -26,7 +26,7 @@ const getCategoryHandler = async (req, res) => {
 
 const postCategoryHandler = async (req, res) => {
   try {
-    const data = req.body;
+    const { data } = req.body;
     await Category.insertMany(data);
     const categories = await Category.find({});
     return res.status(201).json({ categories });

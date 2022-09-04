@@ -17,7 +17,7 @@ const postItemToWishlistHandler = async (req, res) => {
   try {
     const userId = req.userId;
     const user = await User.findById(userId);
-    const  product  = req.body;
+    const { product } = req.body;
     const updatedWishlist = [product, ...user.cart];
     const updatedUser = await User.findByIdAndUpdate(
       userId,
