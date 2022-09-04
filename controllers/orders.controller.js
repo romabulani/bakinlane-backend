@@ -17,7 +17,7 @@ const postItemToOrdersHandler = async (req, res) => {
   try {
     const userId = req.userId;
     const user = await User.findById(userId);
-    const order = req.body;
+    const { order } = req.body;
     const updatedOrders = [order, ...user.orders];
     const updatedUser = await User.findByIdAndUpdate(
       userId,
@@ -28,7 +28,7 @@ const postItemToOrdersHandler = async (req, res) => {
       },
       { new: true }
     );
-    return res.status(200).json({ orders: updatedUser.orders });
+    return res.status(201).json({ orders: updatedUser.orders });
   } catch (e) {
     return res.status(500).json({
       message: "Couldn't post item to orders. Please try again later.",
