@@ -10,11 +10,7 @@ const port = process.env.PORT || 5000;
 const mongoUrl = process.env.MONGO_URL;
 const dbName = process.env.DB_NAME;
 
-app.use(
-  bodyParser.urlencoded({
-    extended: true,
-  })
-);
+app.use(bodyParser.json());
 app.use(cors());
 app.use("/api", routes);
 
