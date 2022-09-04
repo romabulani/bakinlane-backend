@@ -17,7 +17,7 @@ const postAddressHandler = async (req, res) => {
   try {
     const userId = req.userId;
     const user = await User.findById(userId);
-    const {address} = req.body;
+    const address = req.body;
     const updatedAddressArray = [address, ...user.address];
     const updatedUser = await User.findByIdAndUpdate(
       userId,
@@ -73,7 +73,7 @@ const updateAddressHandler = async (req, res) => {
   try {
     const userId = req.userId;
     const user = await User.findById(userId);
-    const {address} = req.body;
+    const address = req.body;
     const { addressId } = req.params;
 
     const updatedAddress = user.addresses.map((addressItem) =>

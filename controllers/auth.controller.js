@@ -3,7 +3,7 @@ const jwt = require("jsonwebtoken");
 const User = require("../models/user.model");
 
 const signupHandler = async (req, res) => {
-  const { data } = req.body;
+  const data = req.body;
   let userFound;
 
   try {
@@ -64,7 +64,7 @@ const signupHandler = async (req, res) => {
 };
 
 const loginHandler = async (req, res) => {
-  const { data } = req.body;
+  const data = req.body;
   let userFound;
 
   try {

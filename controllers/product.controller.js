@@ -26,7 +26,7 @@ const getProductHandler = async (req, res) => {
 
 const postProductHandler = async (req, res) => {
   try {
-    const { data } = req.body;
+    const data = req.body;
     await Product.insertMany(data);
     const products = await Product.find({});
     return res.status(201).json({ products });

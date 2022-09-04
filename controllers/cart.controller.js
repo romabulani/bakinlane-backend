@@ -17,7 +17,7 @@ const postItemToCartHandler = async (req, res) => {
   try {
     const userId = req.userId;
     const user = await User.findById(userId);
-    const {product} = req.body;
+    const product = req.body;
     const updatedCart = [{ ...product, qty: 1 }, ...user.cart];
     const updatedUser = await User.findByIdAndUpdate(
       userId,
@@ -40,7 +40,7 @@ const updateItemInCartHandler = async (req, res) => {
   try {
     const userId = req.userId;
     const user = await User.findById(userId);
-    const {action} = req.body;
+    const action = req.body;
     const { productId } = req.params;
     const cart = user.cart;
 
