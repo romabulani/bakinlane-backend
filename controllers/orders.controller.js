@@ -17,7 +17,7 @@ const postItemToOrdersHandler = async (req, res) => {
   try {
     const userId = req.userId;
     const user = await User.findById(userId);
-    const { order } = req.body;
+    const  order  = req.body;
     const updatedOrders = [order, ...user.orders];
     const updatedUser = await User.findByIdAndUpdate(
       userId,
