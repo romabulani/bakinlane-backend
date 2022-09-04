@@ -94,7 +94,6 @@ const deleteItemFromCartHandler = async (req, res) => {
       });
 
     const updatedCart = cart.filter((cartItem) => cartItem.id !== productId);
-    console.log(updatedCart);
     const updatedUser = await User.findByIdAndUpdate(
       userId,
       {
@@ -104,7 +103,6 @@ const deleteItemFromCartHandler = async (req, res) => {
       },
       { new: true }
     );
-    console.log(updatedUser, "updated user");
     return res.status(200).json({ cart: updatedUser.cart });
   } catch (e) {
     return res.status(500).json({

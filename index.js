@@ -15,7 +15,7 @@ app.use(cors());
 app.use("/api", routes);
 
 app.get("/", (req, res) => {
-  res.send("App is running..");
+  res.send("Welcome to Bakin Lane");
 });
 
 mongoose
