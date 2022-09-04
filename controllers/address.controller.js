@@ -48,7 +48,7 @@ const deleteAddressHandler = async (req, res) => {
         message: "Couldn't find address.",
       });
 
-    addressArray = wishlist.filter(
+    addressArray = addressArray.filter(
       (addressItem) => addressItem._id !== addressId
     );
 
