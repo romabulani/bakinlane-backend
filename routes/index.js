@@ -9,6 +9,6 @@ const verifyAuth = require("../middlewares/verifyAuth");
 router.use("/auth", authRoutes);
 router.use("/categories", categoryRoutes);
 router.use("/products", productRoutes);
-router.use("/users", verifyAuth, userRoutes);
+router.use("/user", verifyAuth, userRoutes);
 
 module.exports = router;
