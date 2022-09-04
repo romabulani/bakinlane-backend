@@ -76,7 +76,7 @@ const loginHandler = async (req, res) => {
   }
 
   if (!userFound)
-    res.status(401).json({
+    return res.status(401).json({
       message: "Invalid credentials. Check your username and password.",
     });
 
@@ -90,7 +90,7 @@ const loginHandler = async (req, res) => {
   }
   if (!isPasswordValid)
     res.status(401).json({
-      message: "Invalid credentials. Check your username and password.",
+      message: "Invalid credentials. Check your username and password.2",
     });
 
   const token = jwt.sign(
