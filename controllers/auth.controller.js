@@ -30,7 +30,7 @@ const signupHandler = async (req, res) => {
     password: encrptedPassword,
     cart: [],
     orders: [],
-    addresses: [],
+    address: [],
     wishlist: [],
   });
 
@@ -57,7 +57,7 @@ const signupHandler = async (req, res) => {
       email: createdUser.email,
       cart: createdUser.cart,
       orders: createdUser.orders,
-      addresses: createdUser.addresses,
+      address: createdUser.address,
       wishlist: createdUser.wishlist,
     },
   });
@@ -66,7 +66,6 @@ const signupHandler = async (req, res) => {
 const loginHandler = async (req, res) => {
   const data = req.body;
   let userFound;
-
   try {
     userFound = await User.findOne({ email: data.email });
   } catch (e) {
@@ -74,7 +73,6 @@ const loginHandler = async (req, res) => {
       .status(500)
       .json({ message: "Login failed.Please try again later!" });
   }
-
   if (!userFound)
     return res.status(401).json({
       message: "Invalid credentials. Check your username and password.",
@@ -108,7 +106,7 @@ const loginHandler = async (req, res) => {
       email: userFound.email,
       cart: userFound.cart,
       orders: userFound.orders,
-      addresses: userFound.addresses,
+      address: userFound.address,
       wishlist: userFound.wishlist,
     },
   });
