@@ -32,7 +32,7 @@ router
   .route("/cart/:productId")
   .post(updateItemInCartHandler)
   .delete(deleteItemFromCartHandler);
-router.route("/cart/clear").get(clearItemsFromCartHandler);
+router.route("/cart/all").get(clearItemsFromCartHandler);
 
 router
   .route("/wishlist")
