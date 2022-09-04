@@ -4,8 +4,8 @@ const getAddressHandler = async (req, res) => {
   try {
     const userId = req.userId;
     const user = await User.findById(userId);
-    const { address } = user;
-    return res.status(200).json({ address });
+    const { addresses } = user;
+    return res.status(200).json({ addresses });
   } catch (e) {
     return res.status(500).json({
       message: "Couldn't get address. Please try again later.",
@@ -23,12 +23,12 @@ const postAddressHandler = async (req, res) => {
       userId,
       {
         $set: {
-          address: updatedAddressArray,
+          addresses: updatedAddressArray,
         },
       },
       { new: true }
     );
-    return res.status(200).json({ address: updatedUser.address });
+    return res.status(200).json({ addresses: updatedUser.addresses });
   } catch (e) {
     return res.status(500).json({
       message: "Couldn't post address. Please try again later.",
@@ -41,7 +41,7 @@ const deleteAddressHandler = async (req, res) => {
     const userId = req.userId;
     const user = await User.findById(userId);
     const { addressId } = req.params;
-    let addressArray = user.address;
+    let addressArray = user.addresses;
 
     if (!addressArray.find((addressItem) => addressItem._id === addressId))
       return res.status(400).json({
@@ -56,12 +56,12 @@ const deleteAddressHandler = async (req, res) => {
       userId,
       {
         $set: {
-          address: addressArray,
+          addresses: addressArray,
         },
       },
       { new: true }
     );
-    return res.status(200).json({ address: updatedUser.address });
+    return res.status(200).json({ addresses: updatedUser.addresses });
   } catch (e) {
     return res.status(500).json({
       message: "Couldn't delete address. Please try again later.",
@@ -84,12 +84,12 @@ const updateAddressHandler = async (req, res) => {
       userId,
       {
         $set: {
-          address: updatedAddress,
+          addresses: updatedAddress,
         },
       },
       { new: true }
     );
-    return res.status(200).json({ address: updatedUser.address });
+    return res.status(200).json({ addresses: updatedUser.addresses });
   } catch (e) {
     return res.status(500).json({
       message: "Couldn't update address. Please try again later.",
