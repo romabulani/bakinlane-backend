@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const categorySchema = Schema({
-  _id: String,
+  id: String,
   title: String,
   imageUrl: String,
 });
