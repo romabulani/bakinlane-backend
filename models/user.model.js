@@ -63,7 +63,7 @@ const orderSchema = Schema(
     items: [cartSchema],
     paymentId: String,
     totalPrice: Number,
-    deliveryAddress: String,
+    deliveryAddress: addressSchema,
   },
   {
     timestamps: true,
