@@ -39,7 +39,7 @@ const signupHandler = async (req, res) => {
     const token = jwt.sign(
       { userId: createdUser._id, email: createdUser.email },
       process.env.SECRET_KEY,
-      { expiresIn: "2h" }
+      { expiresIn: "24h" }
     );
     res.status(201).json({
       message: "Signup successful",
@@ -93,7 +93,7 @@ const loginHandler = async (req, res) => {
   const token = jwt.sign(
     { userId: userFound._id, email: userFound.email },
     process.env.SECRET_KEY,
-    { expiresIn: "2h" }
+    { expiresIn: "24h" }
   );
   return res.status(200).json({
     message: "Login successful",
