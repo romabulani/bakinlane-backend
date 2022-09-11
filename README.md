@@ -1,4 +1,4 @@
-# BackEnd for [Video Library](https://bakinzone.netlify.app/)
+# BackEnd for [ECommerce](https://bakin-lane.netlify.app/)
 
 ## Tech Stack
 - Express
