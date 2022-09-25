@@ -61,12 +61,13 @@ const addressSchema = Schema(
 const orderSchema = Schema(
   {
     items: [cartSchema],
+    orderDate: Date,
     paymentId: String,
     totalPrice: Number,
     deliveryAddress: addressSchema,
   },
   {
-    timestamps: false,
+    timestamps: true,
   }
 );
 
