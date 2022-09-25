@@ -66,7 +66,7 @@ const orderSchema = Schema(
     deliveryAddress: addressSchema,
   },
   {
-    timestamps: true,
+    timestamps: false,
   }
 );
 
