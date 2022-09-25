@@ -26,7 +26,7 @@ const postItemToOrdersHandler = async (req, res) => {
           orders: updatedOrders,
         },
       },
-      { new: true }
+      { new: true, timestamps: false }
     );
     return res.status(201).json({ orders: updatedUser.orders });
   } catch (e) {
