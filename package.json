@@ -1,7 +1,7 @@
 {
   "name": "bakinlane-server",
   "version": "1.0.0",
-  "main": "functions/api.js",
+  "main": "netlify/functions/api.js",
   "author": "Roma Bulani <42478246+romabulani@users.noreply.github.com>",
   "license": "MIT",
   "dependencies": {

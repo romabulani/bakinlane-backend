@@ -1,1 +1,1 @@
-web nodemon src/functions/api.js
+web nodemon src/netlify/functions/api.js
