@@ -25,6 +25,6 @@
 
 
 
-Live Link for BackEnd is [here](https://bakinlane-server.cyclic.app/)
+Live Link for BackEnd is [here](https://bakinlane-server.netlify.app/.netlify/functions/api/products)
 
 Live Link for FrontEnd is [here](https://bakin-lane.netlify.app/)
