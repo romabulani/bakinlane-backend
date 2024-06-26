@@ -11,7 +11,11 @@ const mongoUrl = process.env.MONGO_URL;
 const dbName = process.env.DB_NAME;
 
 app.use(bodyParser.json());
-app.use(cors());
+app.use(
+  cors({
+    origin: '*'
+  })
+);
 app.use("/.netlify/functions/api", routes);
 
 app.get("/", (req, res) => {
